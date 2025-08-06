@@ -9,6 +9,7 @@ A modern, interactive password strength checker with real-time validation and se
 - **Security Requirements** - Clear checklist of password criteria
 - **Password Generator** - Create strong passwords with one click
 - **Security Tips** - Best practices for password security
+- **Multi-language Support** - Available in English and Greek
 - **Responsive Design** - Works on all devices
 
 ## 🛠️ Built With
@@ -27,10 +28,6 @@ A modern, interactive password strength checker with real-time validation and se
 - ✅ Numbers
 - ✅ Special characters
 
-## 🌐 Live Demo
-
-Visit the live demo: [Password Checker](https://john-abgaryan.github.io/Password-Checker/)
-
 ## 📱 Screenshots
 
 The application features a clean, modern interface with:
@@ -39,6 +36,18 @@ The application features a clean, modern interface with:
 - Real-time strength assessment
 - Interactive criteria checklist
 - Helpful security tips
+
+## 🌍 Language Support
+
+The application is available in multiple languages:
+- 🇬🇧 **English** - Default language
+- 🇬🇷 **Greek** - Toggle using the language button
+
+Click the flag icon in the top-right corner to switch between languages.
+
+## 🌐 Live Demo
+
+Visit the live demo: [Password Checker](https://john-abgaryan.github.io/Password-Checker/)
 
 ## 🚀 Quick Start
 
@@ -49,15 +58,17 @@ The application features a clean, modern interface with:
 
 2. Open `index.html` in your browser
 
+
+
+
 3. Start testing password strength!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🎥 Demo Video
 
-<!-- Add your demo video here -->
+
+
+https://github.com/user-attachments/assets/84ac5a87-cb00-47d2-b123-27e60bde866d
+
 *Demo video coming soon...*
 
 ---
