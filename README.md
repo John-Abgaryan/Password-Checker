@@ -37,18 +37,6 @@ The application features a clean, modern interface with:
 - Interactive criteria checklist
 - Helpful security tips
 
-## 🌍 Language Support
-
-The application is available in multiple languages:
-- 🇬🇧 **English** - Default language
-- 🇬🇷 **Greek** - Toggle using the language button
-
-Click the flag icon in the top-right corner to switch between languages.
-
-## 🌐 Live Demo
-
-Visit the live demo: [Password Checker](https://john-abgaryan.github.io/Password-Checker/)
-
 ## 🚀 Quick Start
 
 1. Clone the repository:
@@ -68,8 +56,6 @@ Visit the live demo: [Password Checker](https://john-abgaryan.github.io/Password
 
 
 https://github.com/user-attachments/assets/84ac5a87-cb00-47d2-b123-27e60bde866d
-
-*Demo video coming soon...*
 
 ---
 
