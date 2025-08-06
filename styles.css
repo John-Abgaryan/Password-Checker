@@ -1,0 +1,628 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* DotGrid Background */
+#dot-grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.dot-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.dot-grid__wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.dot-grid__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+
+/* Top Actions Container */
+.top-actions {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 15;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Universal Button Styling */
+.top-actions .top-btn,
+.top-actions .github-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(82, 39, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5227FF;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(82, 39, 255, 0.2);
+    cursor: pointer;
+}
+
+.top-actions .top-btn:hover,
+.top-actions .github-link:hover {
+    background: rgba(82, 39, 255, 0.2);
+    transform: translateY(-1px);
+    color: #5227FF;
+    border-color: rgba(82, 39, 255, 0.3);
+}
+
+/* Language Button Specific */
+.top-actions .language-btn {
+    border: none;
+    outline: none;
+}
+
+/* Flag Icons */
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+
+.flag-icon-gb {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath><g clip-path="url(%23a)"><path d="M0 0v30h60V0z" fill="%23012169"/><path d="m0 0 60 30m0-30L0 30" stroke="%23fff" stroke-width="6"/><path d="m0 0 60 30m0-30L0 30" stroke="%23C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="%23fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="%23C8102E" stroke-width="6"/></g></svg>');
+}
+
+.flag-icon-gr {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 18"><defs><g id="stripe"><rect width="27" height="2" fill="%23fff"/><rect width="27" height="2" y="4" fill="%23fff"/><rect width="27" height="2" y="8" fill="%23fff"/><rect width="27" height="2" y="12" fill="%23fff"/></g></defs><rect width="27" height="18" fill="%23005bae"/><use href="%23stripe"/><rect width="13" height="10" fill="%23005bae"/><rect width="13" height="1.4" y="4.3" fill="%23fff"/><rect width="1.4" height="10" x="5.8" fill="%23fff"/></svg>');
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Password Checker Card */
+.password-checker-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    padding-bottom: 0px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.6s ease-out;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header-icon {
+    font-size: 48px;
+    color: #5227FF;
+    margin-bottom: 16px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Input Section */
+.input-section {
+    margin-bottom: 32px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+#passwordInput {
+    width: 100%;
+    padding: 16px 90px 16px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#passwordInput:focus {
+    border-color: #5227FF;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 4px rgba(82, 39, 255, 0.1);
+}
+
+.input-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-btn:hover {
+    background: rgba(82, 39, 255, 0.1);
+    color: #5227FF;
+}
+
+.input-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.input-btn:disabled:hover {
+    background: none;
+    color: #666;
+}
+
+.generate-btn {
+    right: 52px;
+}
+
+.generate-btn:hover {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.toggle-btn {
+    right: 14px;
+}
+
+/* Strength Meter */
+.strength-meter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 8px;
+    background: #e1e5e9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: #e1e5e9;
+}
+
+.strength-fill.weak {
+    background: linear-gradient(90deg, #ff4757, #ff6b7a);
+    width: 25%;
+}
+
+.strength-fill.fair {
+    background: linear-gradient(90deg, #ffa726, #ffb74d);
+    width: 50%;
+}
+
+.strength-fill.good {
+    background: linear-gradient(90deg, #42a5f5, #64b5f6);
+    width: 75%;
+}
+
+.strength-fill.strong {
+    background: linear-gradient(90deg, #26c6da, #4dd0e1);
+    width: 100%;
+}
+
+.strength-fill.very-strong {
+    background: linear-gradient(90deg, #66bb6a, #81c784);
+    width: 100%;
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+}
+
+.strength-text {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: right;
+    color: #666;
+}
+
+.strength-text.weak { color: #ff4757; }
+.strength-text.fair { color: #ffa726; }
+.strength-text.good { color: #42a5f5; }
+.strength-text.strong { color: #26c6da; }
+.strength-text.very-strong { color: #66bb6a; }
+
+/* Criteria Section */
+.criteria-section {
+    margin-bottom: 32px;
+}
+
+.criteria-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.criterion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.criterion-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: #ff4757;
+}
+
+.criterion.valid .criterion-icon {
+    color: #66bb6a;
+}
+
+.criterion span {
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.criterion.valid span {
+    color: #333;
+}
+
+/* Tips Section */
+.tips-section {
+    margin-bottom: 32px;
+}
+
+.tips-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(82, 39, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.tip:hover {
+    transform: translateY(-2px);
+}
+
+.tip i {
+    color: #5227FF;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.tip p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #66bb6a;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast i {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .top-actions {
+        top: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+    
+    .top-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .flag-icon {
+        width: 18px;
+        height: 13px;
+    }
+    
+    .password-checker-card {
+        padding: 24px;
+        margin: 10px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .header-icon {
+        font-size: 36px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #passwordInput {
+        padding: 16px 80px 16px 16px;
+        font-size: 14px;
+    }
+    
+    .input-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    
+    .generate-btn {
+        right: 44px;
+    }
+    
+    .toggle-btn {
+        right: 12px;
+    }
+    
+    .toast {
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        transform: translateY(100px);
+    }
+    
+    .toast.show {
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .top-btn {
+        background: rgba(82, 39, 255, 0.2);
+        color: #7c4dff;
+        border: 1px solid rgba(82, 39, 255, 0.3);
+    }
+    
+    .top-btn:hover {
+        background: rgba(82, 39, 255, 0.3);
+        color: #7c4dff;
+    }
+    
+    body {
+        background: linear-gradient(180deg, #060010 0%, #060010 100%);
+    }
+    
+    .password-checker-card {
+        background: rgba(26, 32, 44, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .header h1 {
+        color: #f7fafc;
+    }
+    
+    .header p {
+        color: #a0aec0;
+    }
+    
+    #passwordInput {
+        background: rgba(45, 55, 72, 0.8);
+        border-color: #4a5568;
+        color: #f7fafc;
+    }
+    
+    #passwordInput:focus {
+        background: rgba(45, 55, 72, 1);
+    }
+    
+    .input-btn {
+        color: #a0aec0;
+    }
+    
+    .input-btn:hover:not(:disabled) {
+        background: rgba(82, 39, 255, 0.2);
+        color: #5227FF;
+    }
+    
+    .generate-btn:hover {
+        background: rgba(40, 167, 69, 0.2);
+        color: #28a745;
+    }
+    
+    .criteria-section h3,
+    .tips-section h3 {
+        color: #f7fafc;
+    }
+    
+    .criterion span {
+        color: #a0aec0;
+    }
+    
+    .criterion.valid span {
+        color: #e2e8f0;
+    }
+    
+    .tip {
+        background: rgba(82, 39, 255, 0.1);
+    }
+    
+    .tip p {
+        color: #a0aec0;
+    }
+    
+    .typing-cursor {
+        color: #7c4dff;
+    }
+}
+
+/* Typing Animation */
+.typing-text {
+    display: inline;
+}
+
+.typing-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: #5227FF;
+    font-weight: bold;
+    animation: none;
+}
+
+.header h1 .typing-cursor {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.header p .typing-cursor {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.criteria-section h3 .typing-cursor,
+.tips-section h3 .typing-cursor {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Additional animations */
+@keyframes checkmark {
+    0% { transform: scale(0) rotate(45deg); }
+    50% { transform: scale(1.2) rotate(45deg); }
+    100% { transform: scale(1) rotate(45deg); }
+}
+
+.criterion.valid .criterion-icon {
+    animation: checkmark 0.3s ease-out;
+}
